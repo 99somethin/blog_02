@@ -22,8 +22,13 @@ from debug_toolbar.toolbar import debug_toolbar_urls
 
 urlpatterns = [
     path('', include('apps.blog.urls')),
+    path('', include('apps.accounts.urls')),
     path('admin/', admin.site.urls),
 ]
+
+handler403 = 'apps.blog.views.tr_handler403'
+handler404 = 'apps.blog.views.tr_handler404'
+handler500 = 'apps.blog.views.tr_handler500'
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

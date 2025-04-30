@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'apps.blog',
     'mptt',
     'debug_toolbar',
+    'apps.accounts',
+    'django_mptt_admin',
 ]
 
 MIDDLEWARE = [
@@ -124,6 +126,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = (BASE_DIR / 'static')
+STATICFILES_DIRS = [BASE_DIR / 'templates/js/']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
